@@ -91,66 +91,75 @@ a {
 	position: relative;
 }
 
-a::after {
+#home ul {
+	display: flex;
+	gap: 32px;
+	z-index: 1;
+}
+
+#home {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(34, 40, 49);
+	color: rgb(238, 238, 238);
+	padding: 32px;
+	font-size: 1.8rem;
+	z-index: 1;
+	margin-bottom: 150px;
+}
+
+#home a {
+	text-decoration: none;
+	color: rgb(238, 238, 238);
+	position: relative;
+}
+
+#home a::after {
 	content: "";
 	position: absolute;
 	bottom: -10px;
-    left: 50%;
+	left: 50%;
 	width: 1.5px;
 	height: 1.5px;
-    border: 3px solid rgb(0, 173, 181);
-    border-radius: 50%;
+	border: 3px solid rgb(0, 173, 181);
+	border-radius: 50%;
 	background-color: rgb(0, 173, 181);
 	transition: all 0.5s;
 }
 
-a:hover::after {
-    bottom: -20px;
-}
-
-#home,
-#home ul {
-	display: flex;
-	justify-content: center;
-	padding: 32px;
-	gap: 32px;
-	font-size: 1.8rem;
-    z-index: 1;
-}
-
-#home {
-	background-color: rgb(34, 40, 49);
-	color: rgb(238, 238, 238);
+#home a:hover::after {
+	bottom: -20px;
 }
 
 #hero {
 	width: 100%;
 	display: grid;
 	align-items: center;
-	grid-template-columns: 25% repeat(3, 1fr) 25%;
-	grid-template-rows: 15px 400px 100px;
+	grid-template-columns: 15vw repeat(3, 1fr) 15vw;
+	grid-template-rows: 400px 1fr 200px;
 	color: rgb(238, 238, 238);
 	background-color: rgb(34, 40, 49);
+	position: relative;
 }
 
 .name {
 	grid-column: 2 / 3;
-	grid-row: 2 / 4;
+	grid-row: 1 / 4;
 	font-size: calc(6rem + 1vh);
 	line-height: calc(7rem + 3vh);
-	font-family: "Ephesis", "Poiret One",
-		var(--default-fonts);
+	font-family: "Ephesis", "Poiret One", var(--default-fonts);
 	font-weight: 900;
-	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+	text-shadow: 0 0 10px rgba(0, 0, 0, 1);
 	z-index: 1;
 }
 
 .profile-pic {
 	position: absolute;
-	width: 650px;
+	bottom: 0;
+	width: 550px;
 	height: auto;
 	justify-self: center;
-	margin-left: 75px;
+	margin-left: 65px;
 	z-index: 0;
 }
 
@@ -167,41 +176,132 @@ a:hover::after {
 	filter: invert(100%);
 }
 
+.quick-links a {
+	text-decoration: none;
+	color: rgb(238, 238, 238);
+	position: relative;
+}
+
+.quick-links a::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: 1px;
+	border: none;
+	background-color: rgb(0, 173, 181);
+	transition: width 0.2s;
+}
+
+.quick-links a:hover::after {
+	width: 100%;
+}
+
 .small-about {
 	grid-column: 4 / 5;
-	grid-row: 2 / 4;
+	grid-row: 1 / 4;
 	color: rgb(183, 183, 183);
 	font-size: 1.2rem;
 	font-weight: 600;
-	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
 	text-align: start;
-    z-index: 1;
-    position: relative;
+	z-index: 1;
 }
 
-.small-about p a {
-    text-decoration: none;
+.small-about a {
+	text-decoration: none;
 	color: rgb(238, 238, 238);
-    position: relative;
+	position: relative;
 }
 
 .small-about a::after {
 	content: "";
 	position: absolute;
 	bottom: 0;
-    left: 0;
-	width: 100%;
-	height: 1.5px;
-    border: none;
+	left: 0;
+	width: 0%;
+	height: 1px;
+	border: none;
 	background-color: rgb(0, 173, 181);
 	transition: width 0.2s;
 }
 
+.small-about a:hover::after {
+	width: 100%;
+}
 
 .more-about-me {
 	grid-column: 4 / 5;
 	grid-row: 3 / 4;
+	font-size: 1.1rem;
+	width: 250px;
+	height: 40px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+	position: relative;
+}
+
+.more-about-me::after {
+	content: "";
+	position: absolute;
+	bottom: -15px;
+	left: 50%;
+	width: 1.5px;
+	height: 1.5px;
+	border: 3px solid rgb(0, 173, 181);
+	border-radius: 50%;
+	background-color: rgb(0, 173, 181);
+	transition: all 0.5s;
+}
+
+.more-about-me:hover::after {
+	bottom: -25px;
+}
+
+.more-about-me:hover {
+	scale: 1.05;
+}
+
+#projects {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	gap: 32px;
+	background-color: rgb(57, 62, 70);
+	color: rgb(238, 238, 238);
+	padding: 150px 0;
+}
+
+.my-projects {
+	font-size: 3rem;
+	font-family: "Ephesis", "Poiret One", var(--default-fonts);
+}
+
+.projects {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 32px;
+}
+
+.project-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 24px;
+	border: none;
+	border-left: 8px solid rgb(0, 173, 181);
+	border-radius: 5px;
+	color: rgb(34, 40, 49);
+	background-color: rgb(238, 238, 238);
+	box-shadow: 0 0 20px 10px rgb(34, 40, 49);
+}
+
+.project-card .project-title {
+	font-size: 1.3rem;
+	font-weight: 900;
 }
