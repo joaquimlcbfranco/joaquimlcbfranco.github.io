@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
+
 /* CSS Reset */
 
 *,
@@ -65,9 +68,16 @@ h6 {
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+html {
+	font-size: 16px;
+}
+
 body {
-    height: 100vh;
-    width: 100%;
+	height: 100vh;
+	width: 100%;
+	font-family: "Poiret One", var(--default-fonts);
+	font-weight: 600;
+	background-color: rgb(34, 40, 49);
 }
 
 ul,
@@ -75,58 +85,123 @@ li {
 	list-style-type: none;
 }
 
-#header,
-#header ul {
-    display: flex;
-    justify-content: center;
-    padding: 32px;
-    gap: 32px;
+a {
+	text-decoration: none;
+	color: rgb(238, 238, 238);
+	position: relative;
 }
 
-#header {
-    background-color: rgb(34, 40, 49);
-    color: rgb(238, 238, 238);
+a::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+    left: 50%;
+	width: 1.5px;
+	height: 1.5px;
+    border: 3px solid rgb(0, 173, 181);
+    border-radius: 50%;
+	background-color: rgb(0, 173, 181);
+	transition: all 0.5s;
+}
+
+a:hover::after {
+    bottom: -20px;
+}
+
+#home,
+#home ul {
+	display: flex;
+	justify-content: center;
+	padding: 32px;
+	gap: 32px;
+	font-size: 1.8rem;
+    z-index: 1;
+}
+
+#home {
+	background-color: rgb(34, 40, 49);
+	color: rgb(238, 238, 238);
 }
 
 #hero {
-    width: 100%;
-    border: 2px solid yellow;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 25% repeat(3, 1fr) 25%;
-    grid-template-rows: 150px 400px 100px 150px;
-    color: rgb(238, 238, 238);
-    background-color: rgb(34, 40, 49);
+	width: 100%;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 25% repeat(3, 1fr) 25%;
+	grid-template-rows: 15px 400px 100px;
+	color: rgb(238, 238, 238);
+	background-color: rgb(34, 40, 49);
 }
 
 .name {
-    grid-column: 2 / 3;
-    grid-row: 2 / 4;
-    font-size: 36px;
-    justify-self: end;
+	grid-column: 2 / 3;
+	grid-row: 2 / 4;
+	font-size: calc(6rem + 1vh);
+	line-height: calc(7rem + 3vh);
+	font-family: "Ephesis", "Poiret One",
+		var(--default-fonts);
+	font-weight: 900;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+	z-index: 1;
 }
 
 .profile-pic {
-    position: absolute;
-    width: 650px;
-    height: auto;
-    justify-self: center;
-    z-index: 0;
+	position: absolute;
+	width: 650px;
+	height: auto;
+	justify-self: center;
+	margin-left: 75px;
+	z-index: 0;
 }
 
 .quick-links {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
+	grid-column: 2 / 3;
+	grid-row: 3 / 4;
+	display: flex;
+	gap: 32px;
+}
+
+.quick-links img {
+	width: 30px;
+	height: 30px;
+	filter: invert(100%);
 }
 
 .small-about {
-    grid-column: 4 / 5;
-    grid-row: 2 / 4;
+	grid-column: 4 / 5;
+	grid-row: 2 / 4;
+	color: rgb(183, 183, 183);
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	text-align: start;
+    z-index: 1;
+    position: relative;
 }
+
+.small-about p a {
+    text-decoration: none;
+	color: rgb(238, 238, 238);
+    position: relative;
+}
+
+.small-about a::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+    left: 0;
+	width: 100%;
+	height: 1.5px;
+    border: none;
+	background-color: rgb(0, 173, 181);
+	transition: width 0.2s;
+}
+
 
 .more-about-me {
-    grid-column: 4 / 5;
-    grid-row: 3 / 4;
+	grid-column: 4 / 5;
+	grid-row: 3 / 4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
-
